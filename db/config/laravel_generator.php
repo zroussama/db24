@@ -138,9 +138,9 @@ return [
 
         'repository_pattern' => true,
 
-        'resources' => false,
+        'resources' => true,
 
-        'factory' => false,
+        'factory' => true,
 
         'seeder' => false,
 
@@ -189,11 +189,11 @@ return [
 
         'enabled'       => true,
 
-        'created_at'    => 'Crée le ',
+        'created_at'    => 'created_at',
 
-        'updated_at'    => 'Modifié le',
+        'updated_at'    => 'updated_at',
 
-        'deleted_at'    => 'Supprimé le',
+        'deleted_at'    => 'deleted_at',
     ],
 
     /*

@@ -1,0 +1,12 @@
+[
+    {"name": "name", "dbType": "string", "searchable": true},
+    {"name": "lastname", "dbType": "string", "searchable": true},
+    {"name": "id_contact", "dbType": "integer", "searchable": true},
+    {"name": "genre", "dbType": "string", "searchable": true, "enum": "female,male"},
+    {"name": "fonction", "dbType": "string", "searchable": true, "enum": "gerant,technicien,moderateur,commercial,directeur,autre"},
+    {"name": "email", "dbType": "string", "searchable": true},
+    {"name": "phonenumber", "dbType": "string", "searchable": true},
+    {"name": "avatar", "dbType": "string", "searchable": false},
+    {"name": "created_at",  "dbType": "timestamp"},
+    {"name": "updated_at",  "dbType": "timestamp"}
+]
