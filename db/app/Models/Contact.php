@@ -14,7 +14,8 @@ class Contact extends Model
 
     public function personne()
     {
-        return $this->belongsTo(Personne::class,'personne_id');
+        // return $this->belongsTo(Personne::class,'personne_id');
+        return $this->belongsTo(Personne::class);
     }
 
     public $fillable = [

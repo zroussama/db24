@@ -17,7 +17,7 @@ class ContactResource extends JsonResource
         return [
 
             'idContact' => $this->contact_id,
-            'id' => $this->personne_id,
+
             'personne' => new PersonneResource($this->whenLoaded('personne')),
             'fonction' => $this->fonction,
 

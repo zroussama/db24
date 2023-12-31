@@ -47,8 +47,6 @@ class ContactController extends AppBaseController
 
         $contact = $this->contactRepository->create($input);
 
-        Flash::success('Contact saved successfully.');
-
         return redirect(route('contacts.index'));
     }
 
@@ -60,7 +58,6 @@ class ContactController extends AppBaseController
         $contact = $this->contactRepository->find($id);
 
         if (empty($contact)) {
-            Flash::error('Contact not found');
 
             return redirect(route('contacts.index'));
         }
@@ -76,7 +73,6 @@ class ContactController extends AppBaseController
         $contact = $this->contactRepository->find($id);
 
         if (empty($contact)) {
-            Flash::error('Contact not found');
 
             return redirect(route('contacts.index'));
         }
@@ -92,14 +88,12 @@ class ContactController extends AppBaseController
         $contact = $this->contactRepository->find($id);
 
         if (empty($contact)) {
-            Flash::error('Contact not found');
 
             return redirect(route('contacts.index'));
         }
 
         $contact = $this->contactRepository->update($request->all(), $id);
 
-        Flash::success('Contact updated successfully.');
 
         return redirect(route('contacts.index'));
     }
@@ -114,14 +108,12 @@ class ContactController extends AppBaseController
         $contact = $this->contactRepository->find($id);
 
         if (empty($contact)) {
-            Flash::error('Contact not found');
 
             return redirect(route('contacts.index'));
         }
 
         $this->contactRepository->delete($id);
 
-        Flash::success('Contact deleted successfully.');
 
         return redirect(route('contacts.index'));
     }

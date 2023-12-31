@@ -12,6 +12,7 @@ class Personne extends Model
     use HasFactory;
     public $table = 'personnes';
 
+    protected $primaryKey = 'personne_id';
 
 
     public $fillable = [
@@ -30,8 +31,15 @@ class Personne extends Model
 
     public static array $rules = [];
 
+
     public function contact()
     {
         return $this->hasOne(Contact::class);
     }
+
+
+    // public function contact()
+    // {
+    //     return $this->hasOne(Contact::class,'personne_id', 'personne_id');
+    // }
 }
