@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\ContactPersonController;
+use App\Http\Controllers\API\ContactAPIController;
+use App\Http\Controllers\API\PersonneAPIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,14 +22,6 @@ use App\Http\Controllers\API\ContactPersonController;
 // });
 
 
-Route::resource('contacts', App\Http\Controllers\API\ContactAPIController::class)
-    ->except(['create', 'edit']);
-
-Route::resource('add', ContactPersonController::class);
-
-Route::resource('personnes', App\Http\Controllers\API\PersonneAPIController::class)
-    ->except(['create', 'edit']);
-
-Route::resource('contacts', App\Http\Controllers\API\ContactAPIController::class)
-    ->except(['create', 'edit']);
-
+Route::resource('contacts', ContactAPIController::class);
+Route::get('/contacts/deleted', [ContactAPIController::class, 'deletedContacts']);
+Route::resource('personnes', PersonneAPIController::class);

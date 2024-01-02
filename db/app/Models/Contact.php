@@ -10,12 +10,14 @@ class Contact extends Model
 {
     use SoftDeletes;
     use HasFactory;
+
+    protected $primaryKey = 'contact_id';
     public $table = 'contacts';
 
     public function personne()
     {
-        // return $this->belongsTo(Personne::class,'personne_id');
-        return $this->belongsTo(Personne::class);
+        return $this->belongsTo(Personne::class,'personne_id');
+        //return $this->belongsTo(Personne::class);
     }
 
     public $fillable = [
