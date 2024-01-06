@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 use App\Repositories\ContactRepository;
+use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 
 class SearchAPIController extends AppBaseController

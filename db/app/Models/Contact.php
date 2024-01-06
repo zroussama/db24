@@ -16,8 +16,12 @@ class Contact extends Model
 
     public function personne()
     {
-        return $this->belongsTo(Personne::class,'personne_id');
-        //return $this->belongsTo(Personne::class);
+        return $this->belongsTo(Personne::class, 'personne_id');
+    }
+
+    public function fiche()
+    {
+        return $this->belongsTo(Fiche::class,'fiche_id');
     }
 
     public $fillable = [

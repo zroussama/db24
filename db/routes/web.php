@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Livewire\Contacts;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\API\SearchAPIController;
+use App\http\Controllers\PersonneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,5 +27,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::get('/contacts', Contacts::class)->name('contacts.index');
+
+
 });
+Route::get('/search', [SearchAPIController::class, 'fetchContact']);
