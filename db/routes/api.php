@@ -2,11 +2,14 @@
 
 
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\API\SearchAPIController;
+use App\Http\Controllers\API\ContactPersonController;
 use App\Http\Controllers\API\ContactAPIController;
 use App\Http\Controllers\API\PersonneAPIController;
+<<<<<<< HEAD
 use App\Http\Controllers\API\FicheAPIController;
 
+=======
+>>>>>>> parent of 61a3dd0 (CRUD Fiche + Search Manager)
 
 /*
 |--------------------------------------------------------------------------
@@ -24,10 +27,12 @@ use App\Http\Controllers\API\FicheAPIController;
 // });
 
 
-Route::get('/search', [SearchAPIController::class, 'fetchContact']);
 Route::resource('contacts', ContactAPIController::class);
 Route::get('/contacts/deleted', [ContactAPIController::class, 'deletedContacts']);
 Route::resource('personnes', PersonneAPIController::class);
+<<<<<<< HEAD
 
 
 Route::resource('fiches', FicheAPIController::class);
+=======
+>>>>>>> parent of 61a3dd0 (CRUD Fiche + Search Manager)

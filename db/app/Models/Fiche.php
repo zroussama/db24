@@ -3,12 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
- use Illuminate\Database\Eloquent\SoftDeletes; use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 class Fiche extends Model
 {
-     use SoftDeletes;    use HasFactory;    public $table = 'fiches';
+    use SoftDeletes;
+    use HasFactory;
+    public $table = 'fiches';
 
-     protected $primaryKey = 'fiche_id';
+    protected $primaryKey = 'fiche_id';
     public $fillable = [
         'raison_sociale',
         'nom_compte',
@@ -19,20 +23,14 @@ class Fiche extends Model
 
     public function contacts()
     {
-        return $this->hasMany(Contact::class);
+        return $this->hasMany(Contact::class,'fiche_id');
     }
 
     public function gerantContact()
     {
         return $this->contacts()->where('fonction', 'gerant');
     }
-    protected $casts = [
+    protected $casts = [];
 
-    ];
-
-    public static array $rules = [
-
-    ];
-
-
+    public static array $rules = [];
 }

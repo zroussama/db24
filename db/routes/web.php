@@ -19,6 +19,7 @@ use App\http\Controllers\PersonneController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

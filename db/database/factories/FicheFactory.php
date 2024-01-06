@@ -22,8 +22,12 @@ class FicheFactory extends Factory
      */
     public function definition()
     {
-        
+
         return [
+            'raison_sociale' => $this->faker->company,
+            'nom_compte' => $this->faker->userName,
+            'code_client' => 'CMK' . $this->faker->unique()->numberBetween(100, 9999),
+            'code_sous_client' => 'CMK',
             'created_at' => $this->faker->date('Y-m-d H:i:s'),
             'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];

@@ -15,7 +15,12 @@ class FicheResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
+            'fiche_id' => $this->fiche_id,
+            'gerant' => new ContactResource($this->whenLoaded('contacts')->firstWhere('fonction', 'gerant')),
+            'raison_sociale' => $this->raison_sociale,
+            'nom_compte	' => $this->nom_compte,
+            'code_client' => $this->code_client,
+            'code_sous_client' => $this->code_sous_client,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];
