@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\FicheControllerAPIController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\API\SearchAPIController;
@@ -22,7 +23,7 @@ use JeroenNoten\LaravelAdminLte\Menu\Filters\SearchFilter;
 //     return $request->user();
 // });
 
-
+Route::resource('fiches', FicheControllerAPIController::class);
 Route::get('/search', [SearchAPIController::class, 'fetchContact']);
 Route::resource('contacts', ContactAPIController::class);
 Route::get('/contacts/deleted', [ContactAPIController::class, 'deletedContacts']);
