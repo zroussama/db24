@@ -19,9 +19,9 @@ use JeroenNoten\LaravelAdminLte\Menu\Filters\SearchFilter;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
 
 Route::resource('fiches', FicheControllerAPIController::class);
 Route::get('/search', [SearchAPIController::class, 'fetchContact']);
